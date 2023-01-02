@@ -40,9 +40,9 @@ const changeArrow = (event: Event) => {
   if (event.target !== null) {
     const target = event.target as HTMLImageElement;
     if (target.src.indexOf('up') === -1) {
-      target.src = './assets/icons/arrow_up.svg';
-    } else {
       target.src = './assets/icons/arrow_down.svg';
+    } else {
+      target.src = './assets/icons/arrow_up.svg';
     }
   }
 };
