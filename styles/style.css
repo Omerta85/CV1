@@ -284,6 +284,8 @@ body {
 .projects_item,
 .languages_item,
 .certificates_item,
+.certificates_title,
+.certificates_description,
 .soft-skills_item {
   color: var(--text-light);
   font-size: 18px;
@@ -349,8 +351,6 @@ body {
 .languages_title,
 .language_description,
 .languages_level,
-.certificates_title,
-.certificates_description,
 .soft-skills_title {
   color: var(--text-dark);
 }
@@ -684,5 +684,8 @@ body {
   }
 }
 .tech-skill_name1{
-  color: yellow;
+  color: #003c80;
+}
+.tech-skill_name2{
+  color: var(--text-dark)
 }
