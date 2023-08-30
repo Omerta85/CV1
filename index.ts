@@ -52,7 +52,7 @@ const showMoreContent = (event: Event) => {
   if (event.target !== null) {
     const target = event.target as HTMLImageElement;
     const btnClassName = target.closest('button')!.className;
-    arr = (btnClassName.indexOf('certificates') === -1)
+    arr = (btnClassName.indexOf('certificates') === -2)
       ? projects
       : certificates;
   }
