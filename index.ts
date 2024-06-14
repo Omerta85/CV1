@@ -65,23 +65,48 @@ showMoreCerts.addEventListener('click', showMoreContent);
 showMoreProjects.addEventListener('click', changeArrow);
 showMoreProjects.addEventListener('click', showMoreContent);
 
-// Burger-menu
-const burgerBtn = document.querySelector('.burger-menu') as HTMLDivElement;
-const nav = document.querySelector('.nav') as HTMLDivElement;
-const navContainer = document.querySelector('.nav_container') as HTMLDivElement;
-const navList = document.querySelector('.nav_list') as HTMLUListElement;
+// // Burger-menu
+// const burgerBtn = document.querySelector('.burger-menu') as HTMLDivElement;
+// const nav = document.querySelector('.nav') as HTMLDivElement;
+// const navContainer = document.querySelector('.nav_container') as HTMLDivElement;
+// const navList = document.querySelector('.nav_list') as HTMLUListElement;
 
-function activateMenu() {
+// function activateMenu() {
+//   burgerBtn.classList.toggle('active');
+//   navContainer.classList.toggle('active');
+//   nav.classList.toggle('active');
+//   navList.classList.toggle('active');
+//   document.body.classList.toggle('off');
+// }
+
+// function closeMenu() {
+//   return activateMenu();
+// }
+
+// burgerBtn.addEventListener('click', activateMenu);
+// navContainer.addEventListener('click', closeMenu);
+
+// Бургер-меню
+const burgerBtn = document.querySelector('.burger-menu');
+const nav = document.querySelector('.nav');
+const navContainer = document.querySelector('.nav_container');
+const navList = document.querySelector('.nav_list');
+
+burgerBtn.addEventListener('click', () => {
   burgerBtn.classList.toggle('active');
   navContainer.classList.toggle('active');
   nav.classList.toggle('active');
   navList.classList.toggle('active');
   document.body.classList.toggle('off');
-}
+});
 
-function closeMenu() {
-  return activateMenu();
-}
-
-burgerBtn.addEventListener('click', activateMenu);
-navContainer.addEventListener('click', closeMenu);
+// Закриття меню при кліку на будь-яке місце на сторінці
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav') && !e.target.closest('.burger-menu')) {
+    burgerBtn.classList.remove('active');
+    navContainer.classList.remove('active');
+    nav.classList.remove('active');
+    navList.classList.remove('active');
+    document.body.classList.remove('off');
+  }
+});
